@@ -1,0 +1,12 @@
+{
+  "name": "c-01__nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "MD MONTAJUR RAHMAN",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
