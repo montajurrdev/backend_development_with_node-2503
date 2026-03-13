@@ -1,0 +1,14 @@
+{
+  "name": "03___path_module__http_server",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev" : "node index.js",
+    "http": "node httpServer.js"
+    
+  }
+}
