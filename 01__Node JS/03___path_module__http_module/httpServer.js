@@ -17,20 +17,51 @@
 // Headers and Status Codes: provide methods like res.writeHead() and res.setHeader() to manage HTTP headers
 // and res.statusCode for code status (like 200 OK, 404 Not Found)
 
-import { log } from 'node:console';
-import http from 'node:http'
+// import { log } from 'node:console';
+// import http from 'node:http'
 
-const hostname = 'localhost';
-const port = 3000;
+// const hostname = 'localhost';
+// const port = 3000;
 
-const server = http.createServer((req, res)=>{
-res.statusCode = 200;
-res.setHeader('Content-Type', 'text/plain');
+// const server = http.createServer((req, res)=>{
+// res.statusCode = 200;
+// res.setHeader('Content-Type', 'text/plain');
 
-res.end("Hello World\n");
+// res.end("Hello World\n");
+
+// })
+
+// server.listen(port, hostname, ()=>{
+//     log(`Server ruuning at http://${hostname}:${port}/`)
+// })
+
+
+import http from "node:http"
+
+
+// define two constant, the host and port
+
+const host = 'localhost';  // 127.0.0.1   
+const port = 3000;  // endpoint or door
+
+// request listener function - handle HTTP request and HTTP response
+//  must have two arguments request object, and response object
+
+const requestListener = function(req, res){
+    res.writeHead(200);    // status code
+    res.end("My first server!");  
+
+}
+
+// create server object via http module createServer() function.
+const server = http.createServer(requestListener)
+
+// bind server to a network address for connections
+server.listen(port, host, ()=>{
+console.log(`Server is running on http://${host}:${port}`);
 
 })
+// port, host, and callback function are optional
 
-server.listen(port, hostname, ()=>{
-    log(`Server ruuning at http://${hostname}:${port}/`)
-})
+
+
